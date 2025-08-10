@@ -1,13 +1,5 @@
 const userschama = require("../models/userSchema");
 
-const Home = async (req, res) => {
-  try {
-    res.status(200).send("this is a home page");
-  } catch (e) {
-    res.send("Invalid", e);
-  }
-};
-
 const signup = async (req, res, next) => {
   try {
     const {username, phone, email, password, isAdmin} = req.body;

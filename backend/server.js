@@ -19,6 +19,13 @@ app.use(errormiddleware);
 
 const host = "127.0.0.1";
 const port = 3000;
+
+app.use("/", (req, res) => {
+  res.send({
+    acitveStatus: true,
+    error: false,
+  });
+});
 dbconnection().then(() => {
   app.listen(port, host, () => {
     console.log(`Server is running on port http://${host}:${port}/api`);
